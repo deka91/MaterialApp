@@ -11,7 +11,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/detail_appbar_height"
     android:background="@color/theme_primary"
-    android:elevation="@dimen/default_elevation"
+    android:elevation="@dimen/app_bar_elevation"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
   >
 
@@ -116,7 +116,7 @@
                                                       android:layout_marginEnd="@dimen/fab_margin"
                                                       android:backgroundTint="@color/theme_accent"
                                                       android:contentDescription="@string/action_share"
-                                                      android:elevation="@dimen/default_elevation"
+                                                      android:elevation="@dimen/fab_elevation"
                                                       android:src="@drawable/ic_share"
                                                       android:stateListAnimator="@anim/fab_state_list_anim"
                                                       app:fabSize="normal"
