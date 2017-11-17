@@ -8,6 +8,7 @@ import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.RecyclerView;
@@ -96,6 +97,25 @@ public class ArticleListActivity extends ActionBarActivity implements
     }
   }
 
+
+  public void showSnackbar(View view, String message, int duration)
+  {
+    // Create snackbar
+    final Snackbar snackbar = Snackbar.make(view, message, duration);
+
+    // Set an action on it, and a handler
+    snackbar.setAction("DISMISS", new View.OnClickListener()
+    {
+      @Override
+      public void onClick(View v)
+      {
+        snackbar.dismiss();
+      }
+    });
+
+    snackbar.show();
+  }
+
   private void refresh()
   {
     startService(new Intent(this, UpdaterService.class));
@@ -152,6 +172,7 @@ public class ArticleListActivity extends ActionBarActivity implements
     StaggeredGridLayoutManager sglm =
       new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
     mRecyclerView.setLayoutManager(sglm);
+    showSnackbar(findViewById(R.id.layout_main), "Finished loading", Snackbar.LENGTH_SHORT);
   }
 
   @Override
