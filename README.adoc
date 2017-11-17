@@ -1,4 +1,4 @@
-= XYZ Reader Starter Code
+= Make Your App Material
 
 Through this project, you will:
 
