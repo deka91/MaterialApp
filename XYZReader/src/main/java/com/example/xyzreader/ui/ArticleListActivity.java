@@ -43,7 +43,7 @@ import java.util.GregorianCalendar;
 
 //  (3) App theme extends from AppCompat.
 
-// TODO (4) App uses an AppBar and associated Toolbars.
+//  (4) App uses an AppBar and associated Toolbars.
 
 //  (5) App provides a Floating Action Button for the most common action(s).
 
@@ -51,12 +51,11 @@ import java.util.GregorianCalendar;
 
 //  (7) App has a consistent color theme defined in styles.xml. Color theme does not impact usability of the app.
 
-// TODO (8) App provides sufficient space between text and surrounding elements.
+//  (8) App provides sufficient space between text and surrounding elements.
 
 //  (9) App uses images that are high quality, specific, and full bleed.
 
 //  (10) App uses fonts that are either the Android defaults, are complementary, and aren't otherwise distracting.
-
 
 public class ArticleListActivity extends ActionBarActivity implements
   LoaderManager.LoaderCallbacks<Cursor>
@@ -258,4 +257,5 @@ public class ArticleListActivity extends ActionBarActivity implements
       subtitleView = (TextView) view.findViewById(R.id.article_subtitle);
     }
   }
+
 }

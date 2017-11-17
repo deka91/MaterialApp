@@ -9,9 +9,9 @@
   <android.support.design.widget.AppBarLayout
     android:id="@+id/appbar"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/detail_appbar_height"
+    android:layout_height="300dp"
     android:background="@color/theme_primary"
-    android:elevation="@dimen/default_elevation"
+    android:elevation="8dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
   >
 
@@ -40,39 +40,6 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:background="@drawable/photo_background_protection"/>
-
-        <LinearLayout
-          android:id="@+id/meta_bar"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_gravity="bottom"
-          android:layout_marginBottom="@dimen/detail_metabar_vert_padding"
-          android:background="@color/theme_light"
-          android:orientation="vertical"
-          android:paddingBottom="@dimen/detail_metabar_vert_padding"
-          android:paddingLeft="@dimen/detail_inner_horiz_margin"
-          android:paddingRight="@dimen/detail_inner_horiz_margin"
-          android:paddingTop="@dimen/detail_metabar_vert_padding">
-
-          <TextView
-            android:id="@+id/article_title"
-            style="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
-            android:lineSpacingMultiplier="0.9"
-            android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
-            android:textColor="#fff"
-            android:textSize="@dimen/detail_title_text_size"
-            android:textStyle="bold"/>
-
-          <TextView
-            android:id="@+id/article_byline"
-            style="?android:attr/textAppearanceSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#8fff"/>
-        </LinearLayout>
       </FrameLayout>
 
       <android.support.v7.widget.Toolbar
@@ -92,20 +59,61 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
   >
 
-    <TextView
-      android:id="@+id/article_body"
-      style="?android:attr/textAppearanceMedium"
+    <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_margin="@dimen/detail_inner_horiz_margin"
-      android:autoLink="web"
-      android:background="@android:color/white"
-      android:lineSpacingExtra="@dimen/detail_linespace"
-      android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
-      android:linksClickable="true"
-      android:textColor="@android:color/black"
-      android:textColorLink="@color/theme_accent"
-      android:textSize="@dimen/detail_body_text_size"/>
+      android:orientation="vertical">
+
+      <LinearLayout
+        android:id="@+id/meta_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/detail_metabar_vert_padding"
+        android:background="@color/theme_light"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/detail_metabar_vert_padding"
+        android:paddingLeft="@dimen/detail_inner_horiz_margin"
+        android:paddingRight="@dimen/detail_inner_horiz_margin"
+        android:paddingTop="@dimen/detail_metabar_vert_padding">
+
+        <TextView
+          android:id="@+id/article_title"
+          style="?android:attr/textAppearanceLarge"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-condensed"
+          android:lineSpacingMultiplier="0.9"
+          android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
+          android:textColor="#fff"
+          android:textSize="@dimen/detail_title_text_size"
+          android:textStyle="bold"/>
+
+        <TextView
+          android:id="@+id/article_byline"
+          style="?android:attr/textAppearanceSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#8fff"/>
+      </LinearLayout>
+
+      <TextView
+        android:id="@+id/article_body"
+        style="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
+        android:layout_marginRight="@dimen/detail_inner_horiz_margin"
+        android:layout_marginBottom="@dimen/detail_inner_horiz_margin"
+        android:autoLink="web"
+        android:background="@android:color/white"
+        android:lineSpacingExtra="8dp"
+        android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
+        android:linksClickable="true"
+        android:textColor="@android:color/black"
+        android:textColorLink="@color/theme_accent"
+        android:textSize="@dimen/detail_body_text_size"/>
+    </LinearLayout>
 
   </android.support.v4.widget.NestedScrollView>
 
@@ -119,10 +127,10 @@
                                                       android:elevation="@dimen/fab_elevation"
                                                       android:src="@drawable/ic_share"
                                                       android:stateListAnimator="@anim/fab_state_list_anim"
-                                                      app:elevation="@dimen/default_elevation"
+                                                      app:elevation="6dp"
                                                       app:fabSize="normal"
                                                       app:layout_anchor="@id/appbar"
                                                       app:layout_anchorGravity="bottom|right|end"
-                                                      app:pressedTranslationZ="@dimen/detail_pressed_translation"/>
+                                                      app:pressedTranslationZ="12dp"/>
 
 </android.support.design.widget.CoordinatorLayout>

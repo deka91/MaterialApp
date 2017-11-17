@@ -8,9 +8,9 @@
   <android.support.design.widget.AppBarLayout
     android:id="@+id/toolbar_container"
     android:layout_width="match_parent"
-    android:layout_height="168dp"
+    android:layout_height="@dimen/list_appbar_height"
     android:background="@color/theme_primary"
-    android:elevation="8dp">
+    android:elevation="@dimen/default_elevation">
 
     <android.support.design.widget.CollapsingToolbarLayout
       android:layout_width="match_parent" android:layout_height="match_parent"
@@ -50,9 +50,7 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:clipToPadding="false"
-      android:paddingBottom="28dp"
-      android:paddingLeft="@dimen/list_side_margin"
-      android:paddingRight="@dimen/list_side_margin"
+      android:padding="@dimen/recyclerview_padding"
       android:scrollbarStyle="outsideOverlay"/>
   </android.support.v4.widget.SwipeRefreshLayout>
 
