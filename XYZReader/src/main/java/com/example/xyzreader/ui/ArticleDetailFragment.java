@@ -7,12 +7,9 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
@@ -45,20 +42,12 @@ public class ArticleDetailFragment extends Fragment implements
   private static final String TAG = "ArticleDetailFragment";
 
   public static final String ARG_ITEM_ID = "item_id";
-  private static final float PARALLAX_FACTOR = 1.25f;
 
   private Cursor mCursor;
   private long mItemId;
   private View mRootView;
-  private int mMutedColor = 0xFF333333;
-  private CoordinatorLayout mDrawInsetsFrameLayout;
-  private ColorDrawable mStatusBarColorDrawable;
 
-  private int mTopInset;
-  private View mPhotoContainerView;
   private ImageView mPhotoView;
-  private int mScrollY;
-  private boolean mIsCard = false;
   private int mStatusBarFullOpacityBottom;
 
   private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss");
@@ -94,15 +83,9 @@ public class ArticleDetailFragment extends Fragment implements
       mItemId = getArguments().getLong(ARG_ITEM_ID);
     }
 
-    mIsCard = getResources().getBoolean(R.bool.detail_is_card);
     mStatusBarFullOpacityBottom = getResources().getDimensionPixelSize(
       R.dimen.detail_card_top_margin);
     setHasOptionsMenu(true);
-  }
-
-  public ArticleDetailActivity getActivityCast()
-  {
-    return (ArticleDetailActivity) getActivity();
   }
 
   @Override
@@ -122,12 +105,9 @@ public class ArticleDetailFragment extends Fragment implements
                            Bundle savedInstanceState)
   {
     mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
-    mDrawInsetsFrameLayout = (CoordinatorLayout)
-      mRootView.findViewById(R.id.draw_insets_frame_layout);
+    mRootView.findViewById(R.id.draw_insets_frame_layout);
 
     mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
-
-    mStatusBarColorDrawable = new ColorDrawable(0);
 
     mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener()
     {
@@ -226,8 +206,6 @@ public class ArticleDetailFragment extends Fragment implements
             Bitmap bitmap = imageContainer.getBitmap();
             if(bitmap != null)
             {
-              Palette p = Palette.generate(bitmap, 12);
-              mMutedColor = p.getDarkMutedColor(0xFF333333);
               mPhotoView.setImageBitmap(imageContainer.getBitmap());
               mRootView.findViewById(R.id.meta_bar);
             }
