@@ -104,7 +104,6 @@
       android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
       android:linksClickable="true"
       android:textColor="@android:color/black"
-      android:textColorLink="@color/theme_accent"
       android:textSize="@dimen/detail_body_text_size"/>
 
   </android.support.v4.widget.NestedScrollView>
@@ -114,7 +113,6 @@
                                                       android:layout_height="wrap_content"
                                                       android:layout_marginBottom="@dimen/fab_margin"
                                                       android:layout_marginEnd="@dimen/fab_margin"
-                                                      android:backgroundTint="@color/theme_accent"
                                                       android:contentDescription="@string/action_share"
                                                       android:elevation="@dimen/fab_elevation"
                                                       android:src="@drawable/ic_share"
